@@ -54,7 +54,7 @@ function displayWeather() {
 
         // Day One
 
-        $("#day1").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day1").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
 
         var dayOneIcon = response.list[7].weather[0].icon;
         $("#day-1-icon").attr("src", "http://openweathermap.org/img/wn/" + dayOneIcon + "@2x.png")
@@ -68,7 +68,7 @@ function displayWeather() {
         
         // Day Two
 
-        $("#day2").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day2").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
 
         var dayTwoIcon = response.list[15].weather[0].icon;
         $("#day-2-icon").attr("src", "http://openweathermap.org/img/wn/" + dayTwoIcon + "@2x.png")
@@ -81,7 +81,7 @@ function displayWeather() {
 
         // Day Three
 
-        $("#day3").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day3").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
 
         var dayThreeIcon = response.list[23].weather[0].icon;
         $("#day-3-icon").attr("src", "http://openweathermap.org/img/wn/" + dayThreeIcon + "@2x.png")
@@ -94,7 +94,7 @@ function displayWeather() {
 
         // Day Four
 
-        $("#day4").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day4").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
 
         var dayFourIcon = response.list[31].weather[0].icon;
         $("#day-4-icon").attr("src", "http://openweathermap.org/img/wn/" + dayFourIcon + "@2x.png")
@@ -107,7 +107,7 @@ function displayWeather() {
         
         // Day Five
 
-        $("#day5").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day5").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
 
         var dayFiveIcon = response.list[39].weather[0].icon;
         $("#day-5-icon").attr("src", "http://openweathermap.org/img/wn/" + dayFiveIcon + "@2x.png")
