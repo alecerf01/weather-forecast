@@ -1,5 +1,5 @@
 var headerStyle = $("header")
-    .css({ "background-image": "linear-gradient(to right, blue , darkblue)", "height":"100px","display":"flex","justify-content":"center","align-items":"center" })
+    .css({ "background-image": "linear-gradient(to right, blue , darkblue)","display":"flex","justify-content":"center","align-items":"center" })
 
 var currentDate = moment();
 // var day1 = moment("DD/MM/YYYY").add("days", 1).format("DD/MM/YYYY")
@@ -11,15 +11,17 @@ var currentDate = moment();
 
 var searchBtn = $("#search-button")
 
-searchBtn = $("#search-button").css({"background-color":"lightblue","margin-top":"10px","border-radius":"10px","border":"solid black 2px","font-weight":"bold"})
+searchBtn = $(".search-button").css({"background-color":"lightblue","margin-top":"10px","border-radius":"10px","border":"solid black 2px","font-weight":"bold"})
 
 
 
 function displayWeather() {
     // API URL and API Key
-    var inputCity = "plymouth,uk";
+    var inputCity = $("#search-input").val().trim();
     var APIKey = "75f87170766a1fa219fe8b9fd08ad11b"
     var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&appid=${APIKey}`
+
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,7 +42,7 @@ function displayWeather() {
         $(".city").text(currentCity + (currentDate.format(" (DD/MM/YYYY)")))
         .css({"font-size":"25px","font-weight":"bold"}).append(currentIcon);
         var currentTemp = Math.floor(response.list[0].main.temp - 273.15);
-        $("#current-temp").text("Current Temperature: " + currentTemp + " &deg;C")
+        $("#current-temp").text("Current Temperature: " + currentTemp + " Celcius")
         .css({"font-size":"20px"});
         var currentWind = response.list[0].wind.speed;
         $("#current-wind").text("Wind Speed: " + currentWind + "KPH")
@@ -49,12 +51,12 @@ function displayWeather() {
         $("#current-humidity").text("Humidity: " + currentHumidity + "%")
         .css({"font-size":"20px"});
         
-        // $("#forecast").css({"background-color":"gray","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#5-day-forecast").text("5 Day Forecast:").css({"font-size":"25px", "font-weight":"bold","margin-right":"3px"})
 
 
         // Day One
 
-        $("#day1").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day1").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"15px","margin-left":"20px","padding-bottom":"20px","border-radius":"5px"})
 
         var dayOneIcon = response.list[7].weather[0].icon;
         $("#day-1-icon").attr("src", "http://openweathermap.org/img/wn/" + dayOneIcon + "@2x.png")
@@ -68,7 +70,7 @@ function displayWeather() {
         
         // Day Two
 
-        $("#day2").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day2").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"15px","border-radius":"5px"})
 
         var dayTwoIcon = response.list[15].weather[0].icon;
         $("#day-2-icon").attr("src", "http://openweathermap.org/img/wn/" + dayTwoIcon + "@2x.png")
@@ -81,7 +83,7 @@ function displayWeather() {
 
         // Day Three
 
-        $("#day3").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day3").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"15px","border-radius":"5px"})
 
         var dayThreeIcon = response.list[23].weather[0].icon;
         $("#day-3-icon").attr("src", "http://openweathermap.org/img/wn/" + dayThreeIcon + "@2x.png")
@@ -94,7 +96,7 @@ function displayWeather() {
 
         // Day Four
 
-        $("#day4").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day4").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"15px","border-radius":"5px"})
 
         var dayFourIcon = response.list[31].weather[0].icon;
         $("#day-4-icon").attr("src", "http://openweathermap.org/img/wn/" + dayFourIcon + "@2x.png")
@@ -107,7 +109,7 @@ function displayWeather() {
         
         // Day Five
 
-        $("#day5").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px"})
+        $("#day5").css({"background-color":"#2a325c","font-size":"16px", "font-weight":"bold", "color":"white","margin-right":"3px","border-radius":"5px"})
 
         var dayFiveIcon = response.list[39].weather[0].icon;
         $("#day-5-icon").attr("src", "http://openweathermap.org/img/wn/" + dayFiveIcon + "@2x.png")
