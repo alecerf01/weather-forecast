@@ -12,7 +12,7 @@ When user types in a city the current weather for that place and a 5 day forecas
 
 **Below is the attached link for the deployed application**
 
-Click [here](https://alecerf01.github.io/work-day-planner/) to go to my page.
+Click [here](https://alecerf01.github.io/weather-forecast/) to go to my page.
 
 ### Mock-Up
 
