@@ -20,7 +20,7 @@ var searchBtn = $(".search-button").css({ "background-color": "lightblue", "marg
 
 function displayWeather() {
     // API URL and API Key
-    var inputCity = $("#search-input").val().trim();
+    var inputCity = (($("#search-input").val().trim()) || ($(this).attr("data-city")));
     var APIKey = "75f87170766a1fa219fe8b9fd08ad11b"
     var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity}&appid=${APIKey}`
 
@@ -131,7 +131,7 @@ function displayWeather() {
         // creating buttons for input cities history
 
         function renderButtons(){
-        var cityButton = $("<button>").addClass("btn data-city-"+inputCity).text(inputCity).css({ "background-color": "lightgray", "margin-top": "10px", "border-radius": "5px"});
+        var cityButton = $("<button>").addClass("search-button btn").attr("data-city", inputCity).text(inputCity).css({ "background-color": "lightgray", "margin-top": "10px", "border-radius": "5px"});
 
         $("#history").append(cityButton);
 
@@ -150,7 +150,7 @@ function displayWeather() {
 }
 // cityButton.on("click", function(event){
 //     event.preventDefault();
-    
+//     displayWeather();
 // })
 
 searchBtn.on("click", function (event) {
